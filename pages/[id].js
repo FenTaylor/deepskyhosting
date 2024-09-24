@@ -9,6 +9,11 @@ const UserProfile = () => {
   useEffect(() => {
     if (id) {
 
+      if (!id.startsWith('id')) {
+        router.push("/404");
+        return;
+      }
+
       const userId = id.replace('id', '');
 
       const fetchUser = async () => {
@@ -16,7 +21,7 @@ const UserProfile = () => {
         const data = await res.json();
         setUser(data);
       };
-      
+
       fetchUser();
     }
   }, [id]);
