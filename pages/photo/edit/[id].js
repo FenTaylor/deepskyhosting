@@ -16,7 +16,6 @@ const EditPhoto = () => {
 
   useEffect(() => {
     if (id) {
-      // Получаем информацию о фото по ID
       const fetchPhoto = async () => {
         try {
           const res = await fetch(`/api/photo/${id}`);
@@ -63,7 +62,7 @@ const EditPhoto = () => {
 
       if (res.ok) {
         alert('Изменения сохранены');
-        router.push(`/photo/${id}`); // Переход на страницу фото после сохранения
+        router.push(`/photo/${id}`);
       } else {
         alert('Ошибка при сохранении');
       }

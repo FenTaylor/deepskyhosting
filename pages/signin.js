@@ -26,7 +26,7 @@ const SignIn = ({ setUser }) => {
                 
                 setUser(data.user);
 
-                router.push(`/id${data.user.id}`);
+                router.push(`/user/${data.user.id}`);
             } else {
                 setError(data.message || 'Invalid credentials');
             }

@@ -28,7 +28,7 @@ const SignUp = () => {
 
       const data = await res.json();
       if (data.success) {
-        router.push(`/id${data.userId}`);
+        router.push(`/user/${data.userId}`);
       } else {
         setError(data.message || 'An error occurred');
       }

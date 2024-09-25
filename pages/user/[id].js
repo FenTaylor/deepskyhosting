@@ -8,16 +8,10 @@ const UserProfile = () => {
 
   useEffect(() => {
     if (id) {
-
-      if (!id.startsWith('id')) {
-        router.push("/404");
-        return;
-      }
-
-      const userId = id.replace('id', '');
+      const userId = id;
 
       const fetchUser = async () => {
-        const res = await fetch(`/api/users/${userId}`);
+        const res = await fetch(`/api/user/${userId}`);
         const data = await res.json();
         setUser(data);
       };

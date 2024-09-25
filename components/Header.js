@@ -7,7 +7,7 @@ const Header = ({ user }) => {
 
   const fileInputRef = useRef(null);
   const router = useRouter();
-  
+
   const handleUploadClick = () => {
     fileInputRef.current.click();
   };
@@ -27,7 +27,7 @@ const Header = ({ user }) => {
       if (res.ok) {
         const data = await res.json();
 
-        router.push(`/photo/${data.photo_id}`);
+        router.push(`/photo/edit/${data.photo_id}`);
       } else {
         alert('Error uploading photo');
       }
