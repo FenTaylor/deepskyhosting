@@ -36,8 +36,7 @@ const uploadPhoto = async (req, res) => {
       const uniqueFileName = `${uuidv4()}${extension}`;
       const uniqueUrl = uuidv4().slice(0, 8);
 
-      // Оригинал сохраняем в temp, т.к. потом будем заливать в AWS s3
-      const uploadDir = path.join(process.cwd(), 'public/uploads/photos/temp');
+      const uploadDir = path.join(process.cwd(), 'public/uploads/photos/original');
 
 
       const fileBuffer = await fs.readFile(file.filepath);
